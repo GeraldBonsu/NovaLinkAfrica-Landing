@@ -69,6 +69,15 @@
     .dot { width: 4px; height: 4px; border-radius: 2px; background: rgba(225,224,204,0.18); cursor: pointer; transition: background 0.2s, width 0.2s; }
     .dot.active { background: oklch(72% 0.13 80); width: 18px; }
     #counter { font-size: 10px; color: rgba(225,224,204,0.22); letter-spacing: 0.08em; min-width: 44px; text-align: right; }
+
+    @media print {
+      html, body { overflow: visible !important; height: auto !important; background: #000 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      #deck { position: relative !important; height: auto !important; }
+      .slide { position: relative !important; opacity: 1 !important; pointer-events: auto !important; display: flex !important; height: 100vh !important; min-height: 100vh !important; page-break-after: always !important; break-after: page !important; padding-bottom: 16px !important; }
+      .slide:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .noise { display: none !important; }
+      #deck-nav { display: none !important; }
+    }
   </style>
 </head>
 <body>
